@@ -8,7 +8,12 @@ class Utils {
   }
 
   stringToDate(date: string) {
-    return new Date();
+    const year = Number(date.split("/")[2]);
+    const month = Number(date.split("/")[1]);
+    const day = Number(date.split("/")[0]);
+    if (isNaN(year) || isNaN(month) || isNaN(day)) return null;
+    const timeZone = -3;
+    return new Date(year, month - 1, day, timeZone);
   }
 }
 
