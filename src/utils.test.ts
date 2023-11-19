@@ -17,6 +17,19 @@ describe("Utils tests", function () {
     const result = utils.periodInMonths(initialDate, finalDate);
     expect(result).toEqual(1.5);
   });
+
+  // Transformar string em Date válido (driver)
+  test("stringToDate: '15/09/2023'", () => {
+    const date = new Date("2023-09-15");
+    const result = utils.stringToDate("15/09/2023");
+    expect(result).toEqual(date);
+  });
+
+  // Transformar string em Date válido (driver)
+  test("stringToDate: 'xpto'", () => {
+    const result = utils.stringToDate("xpto");
+    expect(result).toEqual(null);
+  });
 });
 
 describe("BankSlipt tests", function () {
